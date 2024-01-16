@@ -1,11 +1,10 @@
-// src/components/TaskList.js
 import React from 'react'
 
 const TaskList = ({tasks}) => (
   <div>
-    <h2>Task List</h2>
+    <h1>Tasks</h1>
     {tasks.length === 0 ? (
-      <p>No tasks available.</p>
+      <p>No Tasks Added Yet</p>
     ) : (
       <ul>
         {tasks.map(task => (
