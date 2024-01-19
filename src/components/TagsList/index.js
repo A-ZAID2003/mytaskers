@@ -1,6 +1,5 @@
 const TagsList = ({tags, activeTag, onTagClick}) => (
   <label htmlFor="tagSelect">
-    {' '}
     <h1>Tags</h1>
     <ul>
       <li>

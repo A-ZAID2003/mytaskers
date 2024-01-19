@@ -1,5 +1,3 @@
-import React from 'react'
-
 const TaskList = ({tasks}) => (
   <div>
     <h1>Tasks</h1>
@@ -9,7 +7,10 @@ const TaskList = ({tasks}) => (
       <ul>
         {tasks.map(task => (
           <li key={task.id}>
-            {task.text} - {task.tag}
+            <div className="task-item">
+              <span>{task.text}</span>
+              <span className="tag">{task.tag}</span>
+            </div>
           </li>
         ))}
       </ul>
