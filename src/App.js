@@ -36,7 +36,9 @@ const App = () => {
   const [taskText, setTaskText] = useState('')
   const [selectedTag, setSelectedTag] = useState(tagsList[0].optionId)
 
-  const handleAddTask = () => {
+  const handleAddTask = e => {
+    e.preventDefault() // Prevent default form submission behavior
+
     if (taskText.trim() === '') return
 
     const newTask = {
@@ -57,7 +59,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Create a Task</h1>
-      <form>
+      <form onSubmit={handleAddTask}>
         <label>
           Task:
           <input
@@ -72,9 +74,7 @@ const App = () => {
           activeTag={selectedTag}
           onTagClick={handleTagClick}
         />
-        <button type="button" onClick={handleAddTask}>
-          Add Task
-        </button>
+        <button type="submit">Add Task</button>
       </form>
       <TaskList tasks={tasks} />
     </div>

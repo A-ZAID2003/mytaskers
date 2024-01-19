@@ -1,11 +1,14 @@
-import React from 'react'
-
 const TagsList = ({tags, activeTag, onTagClick}) => (
-  <label>
+  <label htmlFor="tagSelect">
+    {' '}
     <h1>Tags</h1>
     <ul>
       <li>
-        <select value={activeTag} onChange={e => onTagClick(e.target.value)}>
+        <select
+          id="tagSelect"
+          value={activeTag}
+          onChange={e => onTagClick(e.target.value)}
+        >
           {tags.map(tag => (
             <option key={tag.optionId} value={tag.optionId}>
               {tag.displayText}
