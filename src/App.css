@@ -1,3 +1,55 @@
+.app-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.input-section {
+  width: 40%;
+}
+
+.tasks-section {
+  width: 50%;
+}
+
+.task-list-item {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag-text {
+  margin-left: 10px;
+}
+
+.app-container {
+  display: flex;
+}
+
+.left-section {
+  width: 50%;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.right-section {
+  width: 50%;
+  padding: 20px;
+}
+
+.task-list-item {
+  margin-bottom: 10px;
+}
+
+.task-list-item {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag-text {
+  margin-left: 10px;
+}
+
 * {
   box-sizing: border-box;
 }
