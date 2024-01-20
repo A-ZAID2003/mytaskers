@@ -5,12 +5,30 @@ import TagsList from './components/TagsList'
 import TaskList from './components/TaskList'
 
 const tagsList = [
-  {optionId: 'HEALTH', displayText: 'Health'},
-  {optionId: 'EDUCATION', displayText: 'Education'},
-  {optionId: 'ENTERTAINMENT', displayText: 'Entertainment'},
-  {optionId: 'SPORTS', displayText: 'Sports'},
-  {optionId: 'TRAVEL', displayText: 'Travel'},
-  {optionId: 'OTHERS', displayText: 'Others'},
+  {
+    optionId: 'HEALTH',
+    displayText: 'Health',
+  },
+  {
+    optionId: 'EDUCATION',
+    displayText: 'Education',
+  },
+  {
+    optionId: 'ENTERTAINMENT',
+    displayText: 'Entertainment',
+  },
+  {
+    optionId: 'SPORTS',
+    displayText: 'Sports',
+  },
+  {
+    optionId: 'TRAVEL',
+    displayText: 'Travel',
+  },
+  {
+    optionId: 'OTHERS',
+    displayText: 'Others',
+  },
 ]
 
 const App = () => {
@@ -39,32 +57,28 @@ const App = () => {
   }
 
   return (
-    <div className="app-container">
-      <div className="input-section">
-        <h1>Create a Task</h1>
-        <form onSubmit={handleAddTask}>
-          <label>
-            Task:
-            <input
-              type="text"
-              value={taskText}
-              onChange={e => setTaskText(e.target.value)}
-              placeholder="Enter the task here"
-            />
-          </label>
-          <TagsList
-            tags={tagsList}
-            activeTag={selectedTag}
-            onTagClick={handleTagClick}
+    <div className="App">
+      <h1>Create a Task</h1>
+      <form onSubmit={handleAddTask}>
+        <label>
+          Task:
+          <input
+            type="text"
+            value={taskText}
+            onChange={e => setTaskText(e.target.value)}
+            placeholder="Enter the task here"
           />
-          <button type="submit">Add Task</button>
-        </form>
-      </div>
-      <div className="tasks-section">
-        <li>
-          <TaskList tasks={tasks} />
-        </li>
-      </div>
+        </label>
+        <TagsList
+          tags={tagsList}
+          activeTag={selectedTag}
+          onTagClick={handleTagClick}
+        />
+        <button type="submit">Add Task</button>
+      </form>
+      <li>
+        <TaskList tasks={tasks} />
+      </li>
     </div>
   )
 }

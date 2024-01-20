@@ -1,19 +1,24 @@
-const TaskList = ({tasks}) => (
-  <div>
-    <h1>Tasks</h1>
-    {tasks.length === 0 ? (
-      <p>No Tasks Added Yet</p>
-    ) : (
-      <ul>
-        {tasks.map(task => (
-          <li key={task.id} className="task-list-item">
-            <span>{task.text}</span>
-            <span className="tag-text">{task.tag}</span>
-          </li>
-        ))}
-      </ul>
-    )}
-  </div>
-)
+const TaskList = ({tasks, activeTag}) => {
+  const filteredTasks = activeTag
+    ? tasks.filter(task => task.tag === activeTag)
+    : tasks
+
+  return (
+    <div>
+      <h1>Tasks</h1>
+      {filteredTasks.length === 0 ? (
+        <p>No Tasks Added Yet</p>
+      ) : (
+        <ul>
+          {filteredTasks.map(task => (
+            <li key={task.id}>
+              <p>{activeTag ? task.text : `${task.text} - ${task.tag}`}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
 
 export default TaskList

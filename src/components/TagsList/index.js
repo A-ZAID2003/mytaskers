@@ -16,6 +16,18 @@ const TagsList = ({tags, activeTag, onTagClick}) => (
         </select>
       </li>
     </ul>
+    <div>
+      {tags.map(tag => (
+        <button
+          key={tag.optionId}
+          type="button" // Add type attribute here
+          onClick={() => onTagClick(tag.optionId)}
+          className={activeTag === tag.optionId ? 'active' : ''}
+        >
+          {tag.displayText}
+        </button>
+      ))}
+    </div>
   </label>
 )
 
