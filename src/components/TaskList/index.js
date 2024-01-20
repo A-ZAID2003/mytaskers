@@ -12,7 +12,9 @@ const TaskList = ({tasks, activeTag}) => {
         <ul>
           {filteredTasks.map(task => (
             <li key={task.id}>
-              <p>{activeTag ? task.text : `${task.text} - ${task.tag}`}</p>
+              <p>
+                {task.text} - {task.tag}
+              </p>
             </li>
           ))}
         </ul>
